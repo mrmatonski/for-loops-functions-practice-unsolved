@@ -6,6 +6,16 @@
 
 export function getClientWithLeastPositiveBalance(array) {
   // Your code goes here...
+
+  const positiveAccounts = array.filter(account => account.balance > 0); 
+
+  if (positiveAccounts.length === 0) return []; 
+
+  const lowest = positiveAccounts.reduce((min, current) => {
+    return current.balance < min.balance ? current : min; 
+  });
+
+  return [lowest]; 
   
 }
 

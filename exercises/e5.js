@@ -6,7 +6,7 @@
 
 export function getAllClientNames(array) {
   // Your code goes here...
-
+  return array.map(account => account.name); 
 }
 
 
