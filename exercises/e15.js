@@ -5,10 +5,20 @@
 // NOTE: You can NOT use the array.concat() method in your code
 
 export function concatArrays(arr1, arr2) {
-  // Your code goes here...
+  let result = [];
 
+  // Add elements from the first array
+  for (let i = 0; i < arr1.length; i++) {
+    result.push(arr1[i]);
+  }
+
+  // Add elements from the second array
+  for (let j = 0; j < arr2.length; j++) {
+    result.push(arr2[j]);
+  }
+
+  return result;
 }
-
 
 
 // === TEST YOURSELF ===

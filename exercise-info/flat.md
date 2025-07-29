@@ -6,7 +6,29 @@ The **flat()** creates a new array with all sub-array elements concatenated into
 const arr1 = [0, 1, 2, [3, 4]];
 console.log(arr1.flat());
 // expected output: Array [0, 1, 2, 3, 4]
-```
+
+
+export function flatArrays(inputArray) {
+  let result = [];
+
+  for (let i = 0; i < inputArray.length; i++) {
+    let item = inputArray[i];
+
+    if (Array.isArray(item)) {
+      // If the item is an array, loop through it and push its elements
+      for (let j = 0; j < item.length; j++) {
+        result.push(item[j]);
+      }
+    } else {
+      // If it's not an array, push it directly
+      result.push(item);
+    }
+  }
+
+  return result;
+}
+
+
 
 For this exercise we want you to build a flatArrays() function that solves the same task
 for the depth of 1 with **for loops ONLY**.

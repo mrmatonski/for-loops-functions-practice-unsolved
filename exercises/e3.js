@@ -41,7 +41,14 @@ export function getStringSum(str) {
    return sum; 
 }
 
-  
+  export function getStringSum(str) {
+    let sum = 0; 
+    for(let i = 0; i < str.length; i++) ]
+    let char = str[i]; 
+    if(str[i] < '9' && str[i] > '0') {
+      sum += Number(char);
+    }
+  }
   
 
 

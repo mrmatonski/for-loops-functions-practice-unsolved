@@ -8,6 +8,9 @@
 export function flatArrays(array) {
   // Your code goes here...
 
+  //I am not sure what this is asking me to do? 
+
+
 }
 
 
