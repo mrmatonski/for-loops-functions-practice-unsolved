@@ -15,8 +15,8 @@ export function getClientsWithBalanceOverOneHundred(accounts) {
     }
   }
 
-  return over;
-}
+  return over;}
+
 
 
 // === TEST YOURSELF ===
