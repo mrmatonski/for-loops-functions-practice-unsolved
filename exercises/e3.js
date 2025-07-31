@@ -14,10 +14,10 @@ export function getAverage(array) {
   let sum = 0; 
 
   for (let i = 0; i < array.length; i++) {
-    sum += array[i]; // ✅ use "array"
+    sum += array[i]; 
   }
 
-  return sum / array.length; // ✅ use "array"
+  return sum / array.length; 
 }
 
 
@@ -41,14 +41,7 @@ export function getStringSum(str) {
    return sum; 
 }
 
-  export function getStringSum(str) {
-    let sum = 0; 
-    for(let i = 0; i < str.length; i++) ]
-    let char = str[i]; 
-    if(str[i] < '9' && str[i] > '0') {
-      sum += Number(char);
-    }
-  }
+
   
 
 
