@@ -6,15 +6,33 @@
 // getClientsWithWrongBalance(bankAccounts) => [{ name: 'Name1', balance: 32, ... }, { name: 'Name2', balance: 3523, ... }]
 
 export function getClientsWithWrongBalance(accounts) {
-  return accounts.filter((account) => {
-    const deposits = account.deposits ? account.deposits.reduce((sum, amt) => sum + amt, 0) : 0;
-    const withdrawals = account.withdrawals ? account.withdrawals.reduce((sum, amt) => sum + amt, 0) : 0;
+  let wrongBalanceClients = [];
 
-    const calculatedBalance = deposits - withdrawals;
+  for (let i = 0; i < accounts.length; i++) {
+    let account = accounts[i];
 
-    // Compare using toFixed(2) to avoid floating-point errors
-    return Number(calculatedBalance.toFixed(2)) !== Number(account.balance.toFixed(2));
-  });
+    let deposits = 0;
+    if (account.deposits) {
+      for (let j = 0; j < account.deposits.length; j++) {
+        deposits += account.deposits[j];
+      }
+    }
+
+    let withdrawals = 0;
+    if (account.withdrawals) {
+      for (let j = 0; j < account.withdrawals.length; j++) {
+        withdrawals += account.withdrawals[j];
+      }
+    }
+
+    let calculatedBalance = deposits - withdrawals;
+
+    if (Number(calculatedBalance.toFixed(2)) !== Number(account.balance.toFixed(2))) {
+      wrongBalanceClients.push(account);
+    }
+  }
+
+  return wrongBalanceClients;
 }
 
 
